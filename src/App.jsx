@@ -1,16 +1,22 @@
 import React, { Suspense, lazy } from 'react';
 import './App.css';
 import { Hourglass } from 'react-loader-spinner';
+import { useLayoutEffect } from 'react';
 
-// Utility function to add a delay
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Lazy load with a delay
 const HomePage = lazy(() =>
   delay(2000).then(() => import('./Pages/HomePage')) // Add a 2-second delay before loading HomePage
 );
 
 function App() {
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant"
+    });
+  }, []);
   return (
     <div>
       <Suspense

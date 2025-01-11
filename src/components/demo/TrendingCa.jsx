@@ -143,7 +143,7 @@ const TrendingCa = () => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 space-y-8">
         {sections.map((title) => (
           <div key={title} className="w-full relative">
-            <h2 className="text-xl font-semibold mb-4">{title}</h2>
+            <h2 className="text-2xl font-semibold mb-4">{title}</h2>
             <Carousel
               opts={{
                 align: "start",
